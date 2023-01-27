@@ -4,9 +4,9 @@ Onboarding script to monitor customer activity on the platform and LMS
 This script requires Python 3, and various Python modules. This _should_ be easily
 resolved with
 
-```brew install python```.
+```brew install python```
 
-Once Python is installed, you will need to run pip, the Python module installer.
+Once Python is installed, you will need to run pip, the Python package installer.
 ```
 * pip3 install python-dateutil
 * pip3 install mechanize
