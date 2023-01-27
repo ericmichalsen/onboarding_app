@@ -52,7 +52,8 @@ exclude = ['a11954ef-5297-4d4a-bc9c-3d0140e25044',
            'fce29c48-522f-4984-8c7c-f9473733c67b',
            '7fe89bb8-d49c-48f3-8507-10b9c7b6c353',
            'cea85340-8e98-4049-b9cf-63fc5f21a306',
-           'cae88286-61c5-4417-b46d-0287990ce1b8']
+           'cae88286-61c5-4417-b46d-0287990ce1b8',
+           '63149cf3-0b02-46e7-ae0f-97c7c67a915a']
 
 ## Create an array organizations where member
 get_orgs = subprocess.Popen("terminus org:list --fields=ID,Name,Label --format=csv", shell=True, stdout=subprocess.PIPE)
