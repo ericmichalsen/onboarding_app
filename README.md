@@ -11,7 +11,11 @@ Once Python is installed, you will need to run pip, the Python package installer
 * sudo pip3 install python-dateutil mechanize beautifulsoup4 requests python-dotenv
 ```
 
-Edit the .env file and set your Skilljar username and password.
+Create an .env file and set your Skilljar username and password.
+```
+SJ_EMAIL=<EMAIL>
+SJ_PASWD=<PASSWORD>
+```
 
 When you are ready to run the script, type ```python3 weekly_check.py```
 
