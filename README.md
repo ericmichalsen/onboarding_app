@@ -20,3 +20,5 @@ Edit the .env file and set your Skilljar username and password.
 When you are ready to run the script, type ```python3 weekly_check.py```
 
 The content will print out pre-formatted for Slack. You may need to set the auto-formatting in the Slack preferences. To do so, open Slack's preferences menu by clicking the menu at the top-left corner of the Slack window and selecting “Preferences.” Click “Advanced” in the left pane and enable “Format messages with markup” under Input Options.
+
+Todo: There is a Terminus warning that gets printed when there are no sites. I need to suppress this.
