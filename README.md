@@ -8,11 +8,7 @@ resolved with
 
 Once Python is installed, you will need to run pip, the Python package installer.
 ```
-* pip3 install python-dateutil
-* pip3 install mechanize
-* pip3 install beautifulsoup4
-* pip3 install requests
-* pip3 install python-dotenv
+* sudo pip3 install python-dateutil mechanize beautifulsoup4 requests python-dotenv
 ```
 
 Edit the .env file and set your Skilljar username and password.
