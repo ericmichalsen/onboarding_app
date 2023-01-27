@@ -18,6 +18,9 @@ import requests
 from dotenv import load_dotenv
 load_dotenv()
 
+###
+# Set SkillJar session for scraping
+###
 s = requests.Session()
 cookie_file = '/tmp/cookies'
 jar = LWPCookieJar(cookie_file)
@@ -37,9 +40,6 @@ browser.form['email'] = skilljar_email
 browser.form['password1'] = skilljar_pass
 browser.submit()
 
-
-
-
 # Excluded Organizations
 #  - Onboarding Demo
 #  - Pantheon Employees
@@ -54,15 +54,17 @@ exclude = ['a11954ef-5297-4d4a-bc9c-3d0140e25044',
            'cea85340-8e98-4049-b9cf-63fc5f21a306',
            'cae88286-61c5-4417-b46d-0287990ce1b8']
 
+## Create an array organizations where member
 get_orgs = subprocess.Popen("terminus org:list --fields=ID,Name,Label --format=csv", shell=True, stdout=subprocess.PIPE)
 get_orgs_return = get_orgs.stdout.read()
 
 
 
-# Org Loop
+## Iterate through organization array
 for org_line in get_orgs_return.splitlines():
     org = org_line.decode("utf-8").split(',')
-    # print(org)
+
+    # check if organization is exluded
     if (org[0] not in exclude):
         if (org[1] != "Name"):
             
@@ -71,6 +73,7 @@ for org_line in get_orgs_return.splitlines():
             orgName = org[1]
             orgLabel = org[2]
 
+            # Markup formatting
             print('Weekly Review for *'+orgLabel.strip('\"')+'* \n')
             print('*LMS*')
 
@@ -80,15 +83,13 @@ for org_line in get_orgs_return.splitlines():
             get_users_return = get_users.stdout.read()
             for org_user in get_users_return.splitlines():
                 user = org_user.decode("utf-8")
-
                 domain = user.split('@')[1] 
 
+                ## Exclude members who are Pantheors
                 if not ("pantheon") in domain:
                     # print(user)
                     browser.open("https://dashboard.skilljar.com/analytics/students/ajax-data?draw=1&start=0&length=25&skip_total_count=true&order[0][column]=5&order[0][dir]=desc&signed_up_at=all&latest_activity=all&search[value]="+urllib.parse.quote_plus(user)+"&_=1668790286383")
-
                     response = browser.response().read().decode('utf-8')
-
                     r = json.loads(response)
 
                     for mem in r['data']:
