@@ -41,12 +41,6 @@ browser.form['password1'] = skilljar_pass
 browser.submit()
 
 # Excluded Organizations
-#  - Onboarding Demo
-#  - Pantheon Employees
-#  - Eric Michalsen
-#  - Onboarding Workspace
-#  - Pantheon Decoupled Sandbox
-#  - Pantheon Learning
 
 exclude = ['a11954ef-5297-4d4a-bc9c-3d0140e25044',
            'd3ecc20c-395a-43c4-93ee-f5f43808b6c8',
