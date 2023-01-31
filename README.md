@@ -25,5 +25,6 @@ The content will print out pre-formatted for Slack. You may need to set the auto
 
 Todo: 
  * There is a Terminus warning that gets printed when there are no sites. I need to suppress this.
+ * Terminus auth check and login
  * Exclude org UUIDS in .env
  * Harvest API to display time w/customer for the week
