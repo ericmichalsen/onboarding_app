@@ -19,8 +19,29 @@ from dotenv import load_dotenv
 load_dotenv()
 
 ###
+# Terminus Authentication
+###
+
+## Check validity of an email address
+def is_valid_email(email):
+    # Regular expression pattern for a valid email address
+    pattern = r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
+    return re.match(pattern, email) is not None
+
+## Terminus authority verify
+check_user = subprocess.Popen("terminus whoami", shell=True, stdout=subprocess.PIPE)
+check_user_return = check_user.stdout.read()
+
+## Terminus Auth:Login if not logged in
+if is_valid_email(check_user_return.decode()):
+    login = subprocess.Popen("terminus auth:login --email="+terminus_email, shell=True, stdout=subprocess.PIPE)
+    login_result= login.stdout.read()
+
+###
 # Set SkillJar session for scraping
 ###
+
+## Create Session
 s = requests.Session()
 cookie_file = '/tmp/cookies'
 jar = LWPCookieJar(cookie_file)
@@ -50,26 +71,8 @@ exclude = ['a11954ef-5297-4d4a-bc9c-3d0140e25044',
            'cae88286-61c5-4417-b46d-0287990ce1b8',
            '63149cf3-0b02-46e7-ae0f-97c7c67a915a']
 
-def is_valid_email(email):
-    # Regular expression pattern for a valid email address
-    pattern = r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
-    print(pattern)
-    print(email)
-    return re.match(pattern, email) is not None
-
-## Terminus authority verify
-check_user = subprocess.Popen("terminus whoami", shell=True, stdout=subprocess.PIPE)
-check_user_return = check_user.stdout.read()
-
-print(check_user_return.decode())
-
-if is_valid_email(check_user_return.decode()):
-    login = subprocess.Popen("terminus auth:login --email="+terminus_email, shell=True, stdout=subprocess.PIPE)
-    login_result= login.stdout.read()
-    print(login_result)
 
 
-quit()
 
 ## Create an array organizations where member
 get_orgs = subprocess.Popen("terminus org:list --fields=ID,Name,Label --format=csv", shell=True, stdout=subprocess.PIPE)
