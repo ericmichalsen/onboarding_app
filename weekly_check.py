@@ -30,6 +30,7 @@ browser.set_handle_robots(False)
 browser.addheaders = [('User-agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')]
 browser.set_cookiejar(jar)
 
+terminus_email = os.getenv('TR_EMAIL')
 skilljar_pass = os.getenv('SJ_PASWD')
 skilljar_email = os.getenv('SJ_EMAIL')
 
@@ -48,6 +49,27 @@ exclude = ['a11954ef-5297-4d4a-bc9c-3d0140e25044',
            'cea85340-8e98-4049-b9cf-63fc5f21a306',
            'cae88286-61c5-4417-b46d-0287990ce1b8',
            '63149cf3-0b02-46e7-ae0f-97c7c67a915a']
+
+def is_valid_email(email):
+    # Regular expression pattern for a valid email address
+    pattern = r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
+    print(pattern)
+    print(email)
+    return re.match(pattern, email) is not None
+
+## Terminus authority verify
+check_user = subprocess.Popen("terminus whoami", shell=True, stdout=subprocess.PIPE)
+check_user_return = check_user.stdout.read()
+
+print(check_user_return.decode())
+
+if is_valid_email(check_user_return.decode()):
+    login = subprocess.Popen("terminus auth:login --email="+terminus_email, shell=True, stdout=subprocess.PIPE)
+    login_result= login.stdout.read()
+    print(login_result)
+
+
+quit()
 
 ## Create an array organizations where member
 get_orgs = subprocess.Popen("terminus org:list --fields=ID,Name,Label --format=csv", shell=True, stdout=subprocess.PIPE)
