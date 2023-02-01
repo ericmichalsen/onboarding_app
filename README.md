@@ -32,4 +32,4 @@ Todo:
  * Exclude org UUIDS in .env
  * **Harvest API** to display time w/customer for the week
  * **JIRA API** get slack channel and backup onboarder
- * Automatic submission into Slack
+ * Automatic submission into **Slack API**
