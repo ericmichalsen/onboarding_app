@@ -12,6 +12,7 @@ Once Python is installed, you will need to run pip, the Python package installer
 ```
 * sudo pip3 install python-dateutil mechanize beautifulsoup4 requests python-dotenv
 ```
+You may need to install XCode
 
 Create an .env file and set your Skilljar username and password.
 ```
