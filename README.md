@@ -16,6 +16,7 @@ You may need to install XCode
 
 Create an .env file and set your Skilljar username and password.
 ```
+TR_EMAIL=<TERMINUS AUTH EMAIL>
 SJ_EMAIL=<EMAIL>
 SJ_PASWD=<PASSWORD>
 ```
