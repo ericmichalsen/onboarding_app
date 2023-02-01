@@ -29,3 +29,4 @@ Todo:
  * Terminus auth check and login
  * Exclude org UUIDS in .env
  * Harvest API to display time w/customer for the week
+ * Automatic submission into Slack
