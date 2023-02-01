@@ -14,7 +14,7 @@ Once Python is installed, you will need to run pip, the Python package installer
 ```
 You may need to install XCode
 
-Create an .env file and set your Skilljar username and password.
+Rename the env_rename to .env file and set your Terminus, Skilljar username, and Skilljar password.
 ```
 TR_EMAIL=<TERMINUS AUTH EMAIL>
 SJ_EMAIL=<EMAIL>
