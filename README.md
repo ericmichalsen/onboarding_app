@@ -19,7 +19,7 @@ Create an .env file and set your Skilljar username and password.
 SJ_EMAIL=<EMAIL>
 SJ_PASWD=<PASSWORD>
 ```
-Your SkillJar login may be SSO. This is OK. Go to https://dashboard.skilljar.com/login and click Forgot Password? It'll send the link and set your username to your email and password to your system password.
+Your SkillJar login may be SSO. This is OK. Go to https://dashboard.skilljar.com/login and click *Forgot Password?* It'll send the link so you can set your username to your email and password to your system password.
 
 When you are ready to run the script, type ```python3 weekly_check.py```
 
