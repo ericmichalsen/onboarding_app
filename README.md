@@ -1,5 +1,5 @@
 # onboarding_app
-v 1.0
+v 1.1
 
 Onboarding script to monitor customer activity on the platform and LMS
 
