@@ -30,6 +30,6 @@ Todo:
  * There is a Terminus warning that gets printed when there are no sites. I need to suppress this.
  * ~~Terminus auth check and login~~
  * Exclude org UUIDS in .env
- * Harvest API to display time w/customer for the week
- * JIRA API get slack channel and backup onboarder
+ * **Harvest API** to display time w/customer for the week
+ * **JIRA API** get slack channel and backup onboarder
  * Automatic submission into Slack
