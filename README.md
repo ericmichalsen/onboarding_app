@@ -29,3 +29,4 @@ Todo:
  * **Harvest API** to display time w/customer for the week
  * **JIRA API** get slack channel and backup onboarder
  * Automatic submission into **Slack API**
+ * Run script against individual organization
