@@ -65,6 +65,10 @@ browser.form['password1'] = skilljar_pass
 browser.submit()
 
 
+###
+# Terminus Loop
+###
+
 ## Create an array organizations where member
 get_orgs = subprocess.Popen("terminus org:list --fields=ID,Name,Label --format=csv", shell=True, stdout=subprocess.PIPE)
 get_orgs_return = get_orgs.stdout.read()
