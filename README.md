@@ -1,5 +1,5 @@
 # onboarding_app
-v 1.0
+v 1.1
 
 Onboarding script to monitor customer activity on the platform and LMS
 
@@ -10,15 +10,12 @@ resolved with
 
 Once Python is installed, you will need to run pip, the Python package installer.
 ```
-* sudo pip3 install python-dateutil mechanize beautifulsoup4 requests python-dotenv
+sudo pip3 install python-dateutil mechanize beautifulsoup4 requests python-dotenv
 ```
-You may need to install XCode
+You may need to install XCode.
 
-Create an .env file and set your Skilljar username and password.
-```
-SJ_EMAIL=<EMAIL>
-SJ_PASWD=<PASSWORD>
-```
+Rename the env_rename to .env file and set your Terminus, Skilljar username, and Skilljar password. If you would like to exlude an organization, add it to the UUIDS list, creating a new line, and within the quotes.
+
 Your SkillJar login may be SSO. This is OK. Go to https://dashboard.skilljar.com/login and click *Forgot Password?* It'll send the link so you can set your username to your email and password to your system password.
 
 When you are ready to run the script, type ```python3 weekly_check.py```
@@ -27,7 +24,9 @@ The content will print out pre-formatted for Slack. You may need to set the auto
 
 Todo: 
  * There is a Terminus warning that gets printed when there are no sites. I need to suppress this.
- * Terminus auth check and login
- * Exclude org UUIDS in .env
- * Harvest API to display time w/customer for the week
- * Automatic submission into Slack
+ * ~~Terminus auth check and login~~ v1.1
+ * ~~Exclude org UUIDS in .env~~ v1.1
+ * **Harvest API** to display time w/customer for the week
+ * **JIRA API** get slack channel and backup onboarder
+ * Automatic submission into **Slack API**
+ * Run script against individual organization
